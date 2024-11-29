@@ -342,3 +342,184 @@ footer {
         display: none;
     }
 }
+
+
+/* Add hamburger menu styles */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Adjust navbar for mobile */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(7, 31, 83, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.75rem 0;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Button adjustments */
+    .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    /* Grid adjustments */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Card adjustments */
+    .card {
+        padding: 1.5rem;
+    }
+
+    /* Section adjustments */
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    /* Stats section */
+    .stats-grid {
+        padding: 2rem 0;
+        margin: 2rem 0;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Footer adjustments */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .nav-container {
+        padding: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) {
+    .nav-link,
+    .btn,
+    .card {
+        cursor: default;
+    }
+
+    .nav-link, 
+    .btn {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+}
+
+/* Expertise page mobile adjustments */
+@media (max-width: 768px) {
+    .expertise-wrapper {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .expertise-nav {
+        position: static;
+        margin-bottom: 2rem;
+    }
+
+    .expertise-item {
+        padding: 1rem;
+    }
+
+    .console-window {
+        height: auto;
+        max-height: 70vh;
+    }
+}
