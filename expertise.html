@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Expertise - Teqade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/home/praveen/coke/github/teqade/webpage/app/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .expert-hero {
+            /* background: linear-gradient(rgba(47, 118, 189, 0.3), rgba(26, 46, 233, 0.3)), url('/home/praveen/coke/github/teqade/webpage/app/expertise.jpg'); */
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+            background: rgb(5, 5, 46);
+            /* background: transparent */
+        }
+
+        .expert-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .expert-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            /* max-width: 600px; */
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .expertise-content {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: transparent;
+        }
+
+        .terminal {
+            background: #1a1b26;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .terminal-header {
+            background: #24283b;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #febc2e; }
+        .dot-green { background: #28c841; }
+
+        .terminal-title {
+            color: #a9b1d6;
+            margin-left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+        }
+
+        .terminal-body {
+            padding: 24px;
+            height: 600px;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', monospace;
+            color: #a9b1d6;
+        }
+
+        .path {
+            color: #7dcfff;
+            margin-bottom: 16px;
+        }
+
+        .command {
+            color: #7aa2f7;
+            margin-bottom: 8px;
+        }
+
+        .output {
+            color: #c0caf5;
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .output-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-small {
+            color: #9ece6a;
+            font-size: 14px;
+        }
+
+        .expertise-nav {
+            background: #24283b;
+            border-radius: 12px;
+            overflow: hidden;
+            position: sticky;
+            top: 100px;
+        }
+
+        .nav-item {
+            padding: 16px 24px;
+            color: #a9b1d6;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: #1a1b26;
+            color: #7aa2f7;
+            border-left-color: #7aa2f7;
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 1024px) {
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            .expertise-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TEQADE Technologies</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="expertise.html" class="nav-link">Expertise</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section class="expert-hero">
+        <div class="container">
+            <h1>Our Expertise</h1>
+            <p>Comprehensive technology solutions for modern businesses</p>
+        </div>
+    </section>
+
+    <div class="expertise-content">
+        <div class="container-wide">
+            <div class="expertise-grid">
+                <!-- Expertise Navigation -->
+                <div class="expertise-nav">
+                    <div class="nav-item active" data-tab="software">
+                        <i class="fas fa-code"></i>
+                        Software Development
+                    </div>
+                    <div class="nav-item" data-tab="data">
+                        <i class="fas fa-database"></i>
+                        Data Engineering
+                    </div>
+                    <div class="nav-item" data-tab="ai">
+                        <i class="fas fa-brain"></i>
+                        ML & AI Solutions
+                    </div>
+                    <div class="nav-item" data-tab="cloud">
+                        <i class="fas fa-cloud"></i>
+                        Cloud Management
+                    </div>
+                </div>
+
+                <!-- Terminal Window -->
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="terminal-title">expertise.sh</div>
+                    </div>
+                    <div class="terminal-body">
+                        <!-- Software Development Tab -->
+                        <div class="terminal-content active" id="software">
+                            <div class="path">➜ ~/TechSolutions/expertise/software-development</div>
+                            
+                            <div class="command">$ ls enterprise-solutions/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Custom Application Development</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Enterprise Resource Planning</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>System Integration</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Legacy System Modernization</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Workflow Automation</div>
+                            </div>
+
+                            <div class="command">$ ls web-development/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Responsive Web Applications</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>E-commerce Solutions</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Progressive Web Apps</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>API Development</div>
+                            </div>
+
+                            <div class="command">$ ls mobile-development/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>iOS Development</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Android Development</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Cross-platform Solutions</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Mobile App Strategy</div>
+                            </div>
+                        </div>
+
+                        <!-- Data Engineering Tab -->
+                        <div class="terminal-content" id="data" style="display: none;">
+                            <div class="path">➜ ~/TechSolutions/expertise/data-engineering</div>
+                            
+                            <div class="command">$ ls data-pipeline/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>ETL Process Design</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Data Integration</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Real-time Processing</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Stream Analytics</div>
+                            </div>
+
+                            <div class="command">$ ls data-warehouse/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Data Modeling</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Warehouse Design</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Performance Optimization</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Data Governance</div>
+                            </div>
+                        </div>
+
+                        <!-- AI & ML Tab -->
+                        <div class="terminal-content" id="ai" style="display: none;">
+                            <div class="path">➜ ~/TechSolutions/expertise/ai-ml</div>
+                            
+                            <div class="command">$ ls machine-learning/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Predictive Analytics</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Classification Models</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Regression Analysis</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Deep Learning</div>
+                            </div>
+
+                            <div class="command">$ ls artificial-intelligence/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Natural Language Processing</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Computer Vision</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Intelligent Automation</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>ChatBot Development</div>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Management Tab -->
+                        <div class="terminal-content" id="cloud" style="display: none;">
+                            <div class="path">➜ ~/TechSolutions/expertise/cloud-management</div>
+                            
+                            <div class="command">$ ls cloud-services/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Cloud Migration</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Infrastructure Setup</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Cloud Security</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Performance Monitoring</div>
+                            </div>
+
+                            <div class="command">$ ls devops/</div>
+                            <div class="output">
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>CI/CD Pipeline</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Container Orchestration</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Infrastructure as Code</div>
+                                <div class="output-item"><i class="fas fa-angle-right icon-small"></i>Automated Testing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.terminal-content').forEach(i => i.style.display = 'none');
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).style.display = 'block';
+            });
+        });
+    </script>
+        <footer>
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Teqade TEchnologies Pvt Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
