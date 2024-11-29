@@ -180,6 +180,20 @@
         </div>
     </nav>
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TEQADE Technologies</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="expertise.html" class="nav-link">Expertise</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <section class="contact-hero">
         <div class="container">
             <h1>Get In Touch</h1>
@@ -291,7 +305,26 @@
             <!-- Placeholder for Google Maps or other map service -->
             <!-- Add your map implementation here -->
         </div>
-    </section>
+    </section
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-container')) {
+                document.querySelector('.nav-links').classList.remove('active');
+            }
+        });
+    
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
     <footer>
         <div class="container">
             <div class="footer-bottom">
