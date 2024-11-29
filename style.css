@@ -92,7 +92,7 @@ body {
     left: 0;
     width: 100%;
     height: 100px;
-    background: var(--bg-white);
+    background: transparent;
     /* transform: skewY(-3deg); */
 }
 
